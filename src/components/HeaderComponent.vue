@@ -1,19 +1,21 @@
 <template>
   <div id="header" class="flex"> 
-    <!-- Contacts and JumboTron -->
+    <!-- Contacts Info -->
     <section id="contacts" class="flex">
         <div>
             <font-awesome-icon icon="fa-solid fa-clock" />
-            <span>Open Hours: Mon - Sat - 9:00 - 18:00</span>
+            <span>
+                Open Hours: {{ openHours.openDay }} - {{ openHours.closingDay }} - {{ openHours.openingTime }} - {{ openHours.closingTime }}
+            </span>
         </div>
         <div class="flex">
             <div class="contact-phone">
                 <font-awesome-icon icon="fa-solid fa-solid fa-phone" />
-                +1 (305) 1234-5678
+                {{ phoneNumber }}
             </div>
             <div class="contact-mail">
                 <font-awesome-icon icon="fa-solid fa-envelope" />
-                hello@examples.com
+                {{ email }}
             </div>
             <div class="social-icons">
                 <font-awesome-icon icon="fa-brands fa-facebook-f" class="icon"/>
@@ -22,15 +24,24 @@
             </div>
         </div>
     </section>
-    <section id="jumbotron">
-
-    </section>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'HeaderComponent'
+    name: 'HeaderComponent',
+    data() {
+        return{
+            phoneNumber: '+1 (305) 1234-5678',
+            email: 'hello@examples.com',
+            openHours: {
+                openDay: 'Mon',
+                closingDay: 'Sat',
+                openingTime: '9:00',
+                closingTime: '18:00'
+            }
+        }
+    }
 }
 </script>
 
