@@ -2,16 +2,17 @@
   <div id="jumbotron">
     <section>
         <img class="bg-image" src="../assets/img/jumbo.jpg" alt="jumbotron background">
-       <nav class="flex space-around" >
+       <nav class="flex space-around align-center">
             <div>
                 <NexGenComponent />
             </div>
-            <div id="links">
+            <div id="links" class="flex align-center">
                 <ul class="flex">
                     <li v-for="link in navLinks" :key="link.id">
                         <a :href="link.url">{{ link.name }}</a>
                     </li>
                 </ul>
+                <GreenBtnComponent :buttonName = greenBtnName.getInTouch />
             </div>
        </nav>
     </section>
@@ -21,13 +22,16 @@
 <script>
 import NexGenComponent from './NexGenComponent.vue';
 import {navLinks} from '../data/jumbotronData.js';
+import GreenBtnComponent from './GreenBtnComponent.vue';
+import {greenBtnName} from '../data/greenBtnData.js';
 
 export default {
     name: "JumboTronComponent",
-    components: { NexGenComponent },
+    components: { NexGenComponent, GreenBtnComponent },
     data() {
         return {
-            navLinks
+            navLinks,
+            greenBtnName
         }
     }
 }
