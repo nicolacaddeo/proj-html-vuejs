@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    @import '../style/global_variables.scss';
+    @import '../../style/global_variables.scss';
 
     h1 {
         color: $header-font-color;

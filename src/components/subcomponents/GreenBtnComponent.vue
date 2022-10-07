@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    @import '../style/global_variables.scss';
+    @import '../../style/global_variables.scss';
 
     button {
         text-transform: uppercase;
@@ -26,6 +26,7 @@ export default {
         padding: 1rem 2rem;
         border-radius: 5px;
         font-size: 1rem;
+        font-weight: 600;
         cursor: pointer;
     }
 </style>

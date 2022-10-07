@@ -5,17 +5,17 @@
         <div>
             <font-awesome-icon icon="fa-solid fa-clock" />
             <span>
-                Open Hours: {{ openHours.openDay }} - {{ openHours.closingDay }} - {{ openHours.openingTime }} - {{ openHours.closingTime }}
+                Open Hours: Mon - Sat - 9:00 - 18:00
             </span>
         </div>
         <div class="flex">
             <div class="contact-phone">
                 <font-awesome-icon icon="fa-solid fa-solid fa-phone" />
-                {{ phoneNumber }}
+                {{ contacts.phoneNumber }}
             </div>
             <div class="contact-mail">
                 <font-awesome-icon icon="fa-solid fa-envelope" />
-                {{ email }}
+                {{ contacts.email }}
             </div>
             <div class="social-icons">
                 <font-awesome-icon icon="fa-brands fa-facebook-f" class="icon"/>
@@ -28,18 +28,13 @@
 </template>
 
 <script>
+    import {contacts} from '../data/contacts_data.js'
+
 export default {
     name: 'HeaderComponent',
     data() {
         return{
-            phoneNumber: '+1 (305) 1234-5678',
-            email: 'hello@examples.com',
-            openHours: {
-                openDay: 'Mon',
-                closingDay: 'Sat',
-                openingTime: '9:00',
-                closingTime: '18:00'
-            }
+            contacts
         }
     }
 }
