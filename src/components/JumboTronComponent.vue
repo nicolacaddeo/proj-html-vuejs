@@ -86,7 +86,7 @@ export default {
             }
         }
         #logistics {
-            width: calc(100% / 4);
+            width: 22vw;
             position: absolute;
             left: 55%;
             bottom: 25%;
