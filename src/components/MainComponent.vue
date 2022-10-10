@@ -65,7 +65,7 @@ export default {
     .cards-container {
       display: flex;
       flex-grow: 1;
-      justify-content: space-around;
+      column-gap: 2rem;
       padding: 2rem;
     }
     .business-card {
