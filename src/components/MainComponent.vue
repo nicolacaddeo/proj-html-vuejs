@@ -2,7 +2,7 @@
   <div>
     <section id="business-area" class="flex align-center">
       <div class="container flex">
-        <div class="card">
+        <div class="business-card">
           <h4>Our business areas</h4>
           <h2>Logistics Services</h2>
           <p>
@@ -13,6 +13,12 @@
             :labelName = label.name />
           </div>
           <GreenBtnComponent :buttonName = greenBtnName.readMore />
+        </div>
+        <div class="cards-container">
+          <CardComponent v-for="card in cardsData" :key="card.id" 
+          :imgUrl = card.imgUrl
+          :title = card.title
+          :text = card.text  />
         </div>
       </div>
     </section>
@@ -29,14 +35,17 @@ import GreenLabelComponent from './subcomponents/GreenLabelComponent.vue';
 import {greenLabelData} from '../data/green_label_data.js';
 import GreenBtnComponent from './subcomponents/GreenBtnComponent.vue';
 import {greenBtnName} from '../data/greenBtnData.js';
+import CardComponent from './subcomponents/CardComponent.vue';
+import {cardsData} from '../data/cards_data.js'
 
 export default {
   name: "MainComponent",
-  components: { GreenLabelComponent, GreenBtnComponent },
+  components: { GreenLabelComponent, GreenBtnComponent, CardComponent },
   data() {
     return {
       greenLabelData,
-      greenBtnName
+      greenBtnName,
+      cardsData
     }
   }
 }
@@ -53,7 +62,13 @@ export default {
   #business-area{
     background-color: $section-bg;
     height: 70vh;
-    .card {
+    .cards-container {
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-around;
+      padding: 2rem;
+    }
+    .business-card {
       width: 25%;
       padding: 1rem;
       h4 {
@@ -82,4 +97,6 @@ export default {
   ** First section END
   */
 </style>
+      
+      
     
