@@ -8,9 +8,12 @@
           <p>
             We are leaders in providing logistics services with a set of cutting edge technologies and a team of experienced and renowned professionals.
           </p>
+          <div id="label-container">
+            <GreenLabelComponent v-for="label in greenLabelData" :key="label.id" 
+            :labelName = label.name />
+          </div>
+          <GreenBtnComponent :buttonName = greenBtnName.readMore />
         </div>
-        <div class="card"></div>
-        <div class="card"></div>
       </div>
     </section>
     <section></section>
@@ -22,8 +25,20 @@
 </template>
 
 <script>
+import GreenLabelComponent from './subcomponents/GreenLabelComponent.vue';
+import {greenLabelData} from '../data/green_label_data.js';
+import GreenBtnComponent from './subcomponents/GreenBtnComponent.vue';
+import {greenBtnName} from '../data/greenBtnData.js';
+
 export default {
-    name: 'MainComponent'
+  name: "MainComponent",
+  components: { GreenLabelComponent, GreenBtnComponent },
+  data() {
+    return {
+      greenLabelData,
+      greenBtnName
+    }
+  }
 }
 </script>
 
@@ -39,9 +54,7 @@ export default {
     background-color: $section-bg;
     height: 70vh;
     .card {
-      width: calc(100% / 3);
-      border: 1px dashed blue;
-      height: 50vh;
+      width: 25%;
       padding: 1rem;
       h4 {
         color: #00a6a6;
@@ -57,6 +70,11 @@ export default {
         color: $paragraph-color;
         line-height: 1.5rem;
         width: 85%;
+      }
+      #label-container {
+        margin: 1rem 0;
+        display: flex;
+        column-gap: .5vw;
       }
     }
   }

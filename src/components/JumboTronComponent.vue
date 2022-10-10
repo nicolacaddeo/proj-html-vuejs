@@ -2,7 +2,7 @@
   <div id="jumbotron">
     <section>
         <img class="bg-image" src="../assets/img/jumbo.jpg" alt="jumbotron background">
-        <!-- ? Nav Component -->
+        <!-- *TODO Nav Component -->
        <nav class="flex space-around align-center">
             <div>
                 <NexGenComponent />
@@ -16,7 +16,7 @@
                 <GreenBtnComponent :buttonName = greenBtnName.getInTouch />
             </div>
        </nav>
-       <!-- ? //Nav Component -->
+       <!-- *TODO //Nav Component -->
     </section>
     <section id="logistics">
         <!-- *TODO: bg-green to h1 -->
