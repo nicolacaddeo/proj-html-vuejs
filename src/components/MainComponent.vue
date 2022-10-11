@@ -46,7 +46,21 @@
         <img src="../assets/img/logo-5.png" alt="">
       </div>
     </section>
-    <section></section>
+    <section id="editorial-area">
+      <div class="container">
+        <h4>Our editorial content</h4>
+        <h2>Latest <span class="bg-green">News</span></h2>
+        <div class="p-btn-container">
+          <p>Every week we publish content about what is best in the business world.</p>
+          <GreenBtnComponent :buttonName = greenBtnName.seeAll />
+        </div>
+        <div class="cards-container">
+          <ImageCardComponent v-for="imgCard in imgCardsData" :key="imgCard.id" 
+          :imgUrl = imgCard.imgUrl 
+          :text = imgCard.text />
+        </div>
+      </div>
+    </section>
     <section></section>
     <section></section>
   </div>
@@ -61,16 +75,19 @@ import CardComponent from './subcomponents/CardComponent.vue';
 import {cardsData} from '../data/cards_data.js'
 import CircleComponent from './subcomponents/CircleComponent.vue';
 import {circleData} from '../data/circle_percentage-data';
+import ImageCardComponent from './subcomponents/ImageCardComponent.vue';
+import {imgCardsData} from '../data/img_cards_data.js'
 
 export default {
   name: "MainComponent",
-  components: { GreenLabelComponent, GreenBtnComponent, CardComponent, CircleComponent },
+  components: { GreenLabelComponent, GreenBtnComponent, CardComponent, CircleComponent, ImageCardComponent },
   data() {
     return {
       greenLabelData,
       greenBtnName,
       cardsData,
-      circleData
+      circleData,
+      imgCardsData
     }
   }
 }
@@ -182,6 +199,46 @@ export default {
     }}
   /** 
   ** Third section END
+  */
+  /** 
+  ** Fourth section 
+  */
+    #editorial-area {
+      height: 50vh;
+      padding-top: 8rem;
+      h4 {
+        color: #00a6a6;
+        font-size: .9rem;
+        text-transform: uppercase;
+      }
+      h2 {
+        color: $titles-color;
+        font-size: 3rem;
+        padding: 2rem 0;
+        .bg-green {
+          color: #058283;
+          background-color: rgba(4, 131, 131, 0.2);
+          border-radius: 5px;
+          padding: 0 .5rem;
+        }
+      }
+      .p-btn-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p {
+          color: $paragraph-color;
+        }
+      }
+      .cards-container {
+        padding-top: 2.5rem;
+        padding-bottom: 10rem;
+        display: flex;
+        column-gap: 2rem;
+      }
+    }
+  /** 
+  ** Fourth section END
   */
 </style>
       
