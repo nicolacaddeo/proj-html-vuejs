@@ -36,7 +36,16 @@
       </div>
       <div id="img-area"></div>
     </section>
-    <section></section>
+    <section id="web-area">
+      <div class="img-container">
+        <img src="../assets/img/logo-5.png" alt="">
+        <img src="../assets/img/logo-1.png" alt="">
+        <img src="../assets/img/logo-2.png" alt="">
+        <img src="../assets/img/logo-3.png" alt="">
+        <img src="../assets/img/logo-4.png" alt="">
+        <img src="../assets/img/logo-5.png" alt="">
+      </div>
+    </section>
     <section></section>
     <section></section>
     <section></section>
@@ -158,7 +167,25 @@ export default {
   /** 
   ** Second section END
   */
+  /** 
+  ** Third section 
+  */
+  #web-area {
+    background-color: $section-bg;
+    height: 25vh;
+    .img-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 25vh;
+      column-gap: 5rem;
+    }}
+  /** 
+  ** Third section END
+  */
 </style>
+      
+    
       
       
     
