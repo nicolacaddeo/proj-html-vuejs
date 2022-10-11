@@ -61,8 +61,23 @@
         </div>
       </div>
     </section>
-    <section></section>
-    <section></section>
+    <section id="newsletter-area">
+      <div class="small-container">
+        <div class="w-50">
+          <!-- Know First -->
+          <h4>Newsletter</h4>
+          <h2><span class="bg-green">know</span> first</h2>
+          <p>Follow closely and receive content about our company and the news of the current market.</p>
+        </div>
+        <div class="form-container"> 
+          <!-- Small Form -->
+          <input type="text" placeholder="Name">
+          <input type="text" placeholder="Email">
+          <GreenBtnComponent :buttonName = greenBtnName.subscribe />
+        </div>
+      </div>
+    </section>
+    <section style="height: 300px;"></section>
   </div>
 </template>
 
@@ -204,7 +219,6 @@ export default {
   ** Fourth section 
   */
     #editorial-area {
-      height: 50vh;
       padding-top: 8rem;
       h4 {
         color: #00a6a6;
@@ -240,7 +254,62 @@ export default {
   /** 
   ** Fourth section END
   */
+  /** 
+  ** Fifth section 
+  */
+    #newsletter-area {
+      height: 50vh;
+      background-image: url('../assets/img/bg-1.jpg');
+      background-position: center;
+      .small-container {
+        width: 60%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        height: 50vh;
+        column-gap: 2rem;
+        h4 {
+          color: #00a6a6;
+          font-size: .9rem;
+          text-transform: uppercase;
+        }
+        h2 {
+          color: #fff;
+          font-size: 3rem;
+          text-transform: capitalize;
+          padding: 3rem 0;
+          .bg-green {
+            background-color: rgba(4, 131, 131, 0.2);
+            border-radius: 5px;
+            padding: 0 .5rem;
+          }
+        }
+        p {
+          color: #c0c3d0;
+          line-height: 1.5rem;
+        }
+        .form-container {
+          display: flex;
+          flex-direction: column;
+          row-gap: 1rem;
+          input {
+            display: block;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+            border: none;
+            width: 25vw;
+            padding: 1rem .5rem;
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  /** 
+  ** Fifth section END
+  */
 </style>
+            
+      
       
     
       
